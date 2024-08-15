@@ -5,23 +5,23 @@ import {
     InputPasswordContainer, 
     StyledInput, 
     StatusEyeIcon, 
-    CheckboxContainer
+    CheckboxContainer 
 } from "./Input-Styles";
 
-// Obter configurações da tag input do html para criar componente
+// obter configurações da tag input do html para criar componente
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string;
     isPassword?: boolean;
-}
+} 
 
 const Input: React.FC<InputProps> = ({ label, isPassword, ...props }) => {
-    // Salvar alterações de estado da exibição de senha
-    const [showPassword, setShowPassword] = useState(false);
+    // salvar alterações de estado da exibição de senha
+    const [showPassword, setShowPassword] = useState(false); 
 
-    // Alterar o status de exibição
+    // alterar o status de exibição
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
-    }
+    } 
 
     return (
         <InputContainer>
@@ -30,13 +30,9 @@ const Input: React.FC<InputProps> = ({ label, isPassword, ...props }) => {
                 <InputPasswordContainer>
                     <StyledInput type={showPassword ? 'text' : 'password'} {...props} />
                     <StatusEyeIcon onClick={handleShowPassword}>
-                        {showPassword ? '🙈' : '👁'}
+                        {showPassword ? '👁️' : '👁️‍🗨️'}
                     </StatusEyeIcon>
-                    <CheckboxContainer>
-                        <input type="checkbox" id="rememberMe" />
-                        <label htmlFor="rememberMe">Lembrar-me</label>
-                    </CheckboxContainer>
-                </InputPasswordContainer>
+                </InputPasswordContainer>    
             ) : (
                 <StyledInput {...props} />
             )}

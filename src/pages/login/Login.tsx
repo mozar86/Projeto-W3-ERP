@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Input from "../../components/Input";
-import { LoginBanner, LoginContainer, LoginForm, Button } from "./Login-Styles";
+import { LoginContainer, LoginForm, LoginBanner, LoginButton } from "./Login-Styles";
+import { CheckboxContainer } from "../../components/Input-Styles";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -9,20 +10,26 @@ const Login = () => {
     return (
         <LoginContainer>
             <LoginForm>
+                <p>Seja bem-vindo!</p>
+                <h1>Realize seu Login</h1>
                 <Input 
-                    label="Email" 
+                    label={"E-mail"} 
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <Input 
-                    label="Senha" 
+                    label={"Senha"} 
                     type="password"
-                    isPassword
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    isPassword
                 />
-                <Button>Entrar</Button>
+                <CheckboxContainer>
+                    <input type="checkbox" id="rememberMe" />
+                    <label htmlFor="rememberMe">Lembrar-me</label>
+                </CheckboxContainer>
+                <LoginButton>Entrar</LoginButton>
             </LoginForm>
             <LoginBanner />
         </LoginContainer>
