@@ -5,8 +5,7 @@ export const LoginContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100vh;
-  width: 100vw;
-  padding: 0 10%;
+  
   background-color: #fff;
 `;
 
@@ -14,9 +13,8 @@ export const LoginForm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 50%;
-  max-width: 400px;
-  padding: 2rem;
+  max-width: 20%;
+  margin-left: 17%;
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -36,7 +34,7 @@ export const LoginForm = styled.div`
 
 export const LoginBanner = styled.div`
   background: url('src/assets/banner-login.png') no-repeat center/cover;
-  width: 50%;
+  width: 38%;
   height: 100%;
   background-color: #0033A0;
   display: flex;
@@ -52,11 +50,12 @@ export const LoginBanner = styled.div`
 `;
 
 export const LoginButton = styled.button`
-  width: 100%;
-  padding: 1rem;
-  background-color: #007bff;
+  width: 54.5vh;
+  height: 50px;
+  background-color: #001C98;
+  margin-left: 4px;
   border: none;
-  border-radius: 5px;
+  border-radius: 14px;
   color: white;
   font-size: 1.25rem;
   cursor: pointer;
@@ -64,5 +63,24 @@ export const LoginButton = styled.button`
   
   &:hover {
     background-color: #0056b3;
+  }
+`;
+
+export const CheckboxForgotPasswordContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const CheckboxContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  input {
+    margin-right: 0.5rem;
+  }
+  label {
+    font-size: 0.9rem;
+    color: #333;
   }
 `;

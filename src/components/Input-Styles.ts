@@ -8,9 +8,22 @@ export const InputContainer = styled.div`
 `;
 
 export const StyledLabel = styled.label`
-  font-size: 1rem;
-  color: #555;
+  position: absolute;
+  top: -0,7rem;
+  left: 1rem;
+  background-color: white;
+  padding: 0 0.5rem;
+  font-size: 0.85rem;
+  color: #757575;
   margin-bottom: 0.5rem;
+  margin-top: -8px;
+  pointer-events: none;
+
+  &:focus {
+    border-color: #00C247;
+    outline: none;
+    color: #00C247;
+  }
 `;
 
 export const InputPasswordContainer = styled.div`
@@ -19,15 +32,17 @@ export const InputPasswordContainer = styled.div`
 `;
 
 export const StyledInput = styled.input`
-  width: 100%;
+  width: 50vh;
+  height: 37%;
   padding: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 5px;
+  border: 2px solid white;
+  border-radius: 16px;
   font-size: 1rem;
+  color: #212121;
   transition: border-color 0.3s;
 
   &:focus {
-    border-color: #00a3ff;
+    border-color: #00C247;
     outline: none;
   }
 `;
@@ -39,22 +54,39 @@ export const StatusEyeIcon = styled.span`
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 1rem;
-  color: #999;
+  color: #ccc;
+  opacity: 0.5;
 
   &:hover {
-    color: #333;
+    color: #ccc;
+    opacity: 0.7;
   }
 `;
 
-export const CheckboxContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  input {
-    margin-right: 0.5rem;
+export const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: url('src/assets/remix-icons/fill/system/checkbox-fill.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin-right: 0.5rem;
+
+  &:checked {
+    background: url('src/assets/remix-icons/fill/system/checkbox-fill.svg');
   }
-  label {
-    font-size: 0.9rem;
-    color: #333;
+`;
+
+export const ForgotPasswordLink = styled.a`
+  margin-left: 30px;
+  margin-bottom: 11px;
+  font-size: 0.9rem;
+  color: #616161;
+  text-decoration: none;
+
+  &:hover {
+    color: #616161;
+    text-decoration: none;
   }
 `;

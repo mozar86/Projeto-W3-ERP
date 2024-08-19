@@ -5,7 +5,6 @@ import {
     InputPasswordContainer, 
     StyledInput, 
     StatusEyeIcon, 
-    CheckboxContainer 
 } from "./Input-Styles";
 
 // obter configurações da tag input do html para criar componente
@@ -28,6 +27,7 @@ const Input: React.FC<InputProps> = ({ label, isPassword, ...props }) => {
             <StyledLabel>{label}</StyledLabel>
             {isPassword ? (
                 <InputPasswordContainer>
+                <StyledLabel>{label}</StyledLabel>
                     <StyledInput type={showPassword ? 'text' : 'password'} {...props} />
                     <StatusEyeIcon onClick={handleShowPassword}>
                         {showPassword ? '👁️' : '👁️‍🗨️'}

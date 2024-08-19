@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Input from "../../components/Input";
-import { LoginContainer, LoginForm, LoginBanner, LoginButton } from "./Login-Styles";
-import { CheckboxContainer } from "../../components/Input-Styles";
+import { LoginContainer, LoginForm, LoginBanner, LoginButton, CheckboxForgotPasswordContainer, CheckboxContainer } from "./Login-Styles";
+import { ForgotPasswordLink, StyledCheckbox } from "../../components/Input-Styles";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -25,10 +25,13 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     isPassword
                 />
-                <CheckboxContainer>
-                    <input type="checkbox" id="rememberMe" />
-                    <label htmlFor="rememberMe">Lembrar-me</label>
-                </CheckboxContainer>
+                <CheckboxForgotPasswordContainer>
+                    <CheckboxContainer>
+                        <StyledCheckbox id="rememberMe" />
+                        <label htmlFor="rememberMe">Lembrar-me</label>
+                    </CheckboxContainer>
+                    <ForgotPasswordLink href="#">Esqueci minha senha</ForgotPasswordLink>
+                </CheckboxForgotPasswordContainer>
                 <LoginButton>Entrar</LoginButton>
             </LoginForm>
             <LoginBanner />
