@@ -1,7 +1,8 @@
 import { useState } from "react";
-import Input from "../../components/Input";
-import { LoginContainer, LoginForm, LoginBanner, LoginButton, CheckboxForgotPasswordContainer, CheckboxContainer } from "./Login-Styles";
-import { ForgotPasswordLink, StyledCheckbox } from "../../components/Input-Styles";
+import Input from "../../components/login/Input";
+import { StyledCheckbox, ForgotPasswordLink } from "../../components/login/Input-Styles";
+import { LoginContainer, LoginForm, CheckboxForgotPasswordContainer, CheckboxContainer, LoginButton, LoginBanner } from "./Login-Styles";
+
 
 const Login = () => {
     const [email, setEmail] = useState("");
