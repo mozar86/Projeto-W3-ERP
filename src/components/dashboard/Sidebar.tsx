@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { SidebarContainer, Logo, ContactButton } from "./Sidebar-Styles";
 
 
-
 const Sidebar = ({ isVisible }) => {
   return (
     <SidebarContainer isVisible={isVisible}>

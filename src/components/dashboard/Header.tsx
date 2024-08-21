@@ -1,22 +1,34 @@
-import React from "react";
-import { HeaderContainer, MenuToggle, UserMenu, UserAvatar, UserDropdown, UserDropdownItem } from "./Header-Styles";
+import React, { useState } from "react";
+import { HeaderContainer, MenuButton, UserMenuContainer, UserProfile, UserMenu, UserMenuItem } from "./Header-Styles";
 
 
-const Header = ({ onToggleSidebar }) => {
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+interface HeaderProps {
+  onToggleSidebar: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+
+  const handleUserMenuToggle = () => {
+    setIsUserMenuOpen(!isUserMenuOpen);
+  };
 
   return (
     <HeaderContainer>
-      <MenuToggle onClick={onToggleSidebar}>☰</MenuToggle>
-      <UserMenu onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-        <UserAvatar src="/path/to/avatar.jpg" alt="User" />
-        {isDropdownOpen && (
-          <UserDropdown>
-            <UserDropdownItem>Configurações</UserDropdownItem>
-            <UserDropdownItem onClick={() => window.location.href = "/login"}>Sair</UserDropdownItem>
-          </UserDropdown>
-        )}
-      </UserMenu>
+      <MenuButton onClick={onToggleSidebar}>
+        <img src='../src/assets/outline/menu/icon.png' alt="menu" />
+      </MenuButton>
+        <UserMenuContainer>
+          <UserProfile onClick={handleUserMenuToggle}>
+            <span>Rafael Oliveira</span>
+          </UserProfile>
+          {isUserMenuOpen && (
+            <UserMenu>
+              <UserMenuItem>Configurações</UserMenuItem>
+              <UserMenuItem onClick={() => window.location.href = '/login'}>Sair</UserMenuItem>
+            </UserMenu>
+          )}
+        </UserMenuContainer>
     </HeaderContainer>
   );
 };

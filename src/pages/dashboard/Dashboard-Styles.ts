@@ -4,7 +4,7 @@ export const DashboardContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #f5f5f5;
+  background-color: yellow;
 `;
 
 export const MainContent = styled.div`
