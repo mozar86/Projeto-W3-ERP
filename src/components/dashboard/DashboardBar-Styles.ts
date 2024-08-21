@@ -1,12 +1,21 @@
 import styled from "styled-components";
 
 export const DashboardBarContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
-  background-color: #f5f5f5;
+  background-color: #001C98;
+  border-radius: 24px;
 `;
 
 export const Title = styled.h2`
+  color: #fff;
   margin-bottom: 1rem;
+`;
+
+export const DashboardBarTop = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const FilterMenu = styled.select`
@@ -18,5 +27,5 @@ export const FilterMenu = styled.select`
 
 export const DataCardContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
