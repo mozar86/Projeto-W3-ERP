@@ -1,32 +1,52 @@
 import styled from "styled-components";
 
-export const SidebarContainer = styled.div<{ isVisible: boolean }>`
-  width: 250px;
+interface SidebarContainerProps {
+  isOpen: boolean;
+}
+
+interface SidebarContentProps {
+  isOpen: boolean;
+}
+
+export const SidebarContainer = styled.div<SidebarContainerProps>`
+  width: ${({ isOpen }) => (isOpen ? "14.27%" : "6.09%")};
   height: 100vh;
-  background-color: #162D59;
+  transition: width 0.3s ease;
+  background-color: #001C98;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const SidebarContent = styled.div<SidebarContentProps>`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   padding: 1rem;
-  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
 `;
 
 export const Logo = styled.img`
-  width: 150px;
+  width: 80%;
   margin-bottom: 2rem;
 `;
 
-export const NavLink = styled.a`
+export const ContactButton = styled.img`
+  width: 80%;
+  margin-top: auto;
+`;
+
+export const SidebarLink = styled.a`
   display: block;
+  font-size: 1rem;
   color: #fff;
-  padding: 1rem 0;
   text-decoration: none;
-  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 
   &:hover {
-    color: #00a3ff;
+    text-decoration: underline;
   }
 `;
 
-export const ContactButton = styled.img`
-  margin-top: auto;
-  cursor: pointer;
-  width: 100%;
-`;
+

@@ -2,30 +2,51 @@ import styled from "styled-components";
 
 export const DashboardContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  width: 100%;
   height: 100vh;
-  background-color: yellow;
+  overflow: hidden;
 `;
 
-export const MainContent = styled.div`
+export const ContentArea = styled.div<{ isSidebarOpen: boolean }>`
+  width: 100%;
+  padding-right: 2rem;
+  background-color: #f5f5f5;
+  margin-left: ${({ isSidebarOpen }) => (isSidebarOpen ? "14.27%" : "6.09%")};
+  transition: margin-left 0.3s ease;
+`;
+
+
+
+export const SidebarContent = styled.div`
   display: flex;
-  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  width: 14.27%;
+  background-color: #020e56;
+  transition: width 0.3s ease;
+
+  .sidebar-collapsed & {
+    width: 6.09%;
+  }
 `;
 
-export const SidebarWrapper = styled.div`
-  flex-basis: 250px;
-  background-color: #162D59;
-`;
-
-export const ContentWrapper = styled.div`
-  flex: 1;
+export const MainContent = styled.main<{ isSidebarOpen: boolean }>`
+  flex-grow: 1;
   padding: 2rem;
-  background-color: #eef2f7;
   overflow-y: auto;
+  background-color: #ffffff;
+  margin-left: ${({ isSidebarOpen }) => (isSidebarOpen ? "14.27%" : "6.09%")};
+  transition: margin-left 0.3s ease;
 `;
 
-export const ListContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
+export const Title = styled.h1`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #020e56;
+  margin-bottom: 1rem;
+`;
+
+export const Section = styled.section`
+  margin-bottom: 2rem;
 `;

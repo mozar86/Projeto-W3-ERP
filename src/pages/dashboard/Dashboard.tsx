@@ -1,35 +1,36 @@
-import React, { useState } from "react";
-import ClientList from "../../components/dashboard/ClientList";
-import DashboardBar from "../../components/dashboard/DashboardBar";
-import Header from "../../components/dashboard/Header";
-import ProductList from "../../components/dashboard/ProductList";
+import React from "react";
+import { DashboardContainer, ContentArea } from "./Dashboard-Styles";
 import Sidebar from "../../components/dashboard/Sidebar";
-import { DashboardContainer, MainContent, SidebarWrapper, ContentWrapper } from "./Dashboard-Styles";
+import Header from "../../components/dashboard/Header";
+import DashboardBar from "../../components/dashboard/DashboardBar";
+import ProductList from "../../components/dashboard/ProductList";
+import ClientList from "../../components/dashboard/ClientList";
 
-
-const Dashboard = () => {
-  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+const Dashboard: React.FC = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
 
   const handleToggleSidebar = () => {
-    setIsSidebarVisible(!isSidebarVisible);
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
-    <DashboardContainer>
-      <Header onToggleSidebar={handleToggleSidebar} />
-      <MainContent>
-        <SidebarWrapper>
-          <Sidebar isVisible={isSidebarVisible} />
-        </SidebarWrapper>
-        <ContentWrapper>
-          <DashboardBar />
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <ProductList />
-            <ClientList />
-          </div>
-        </ContentWrapper>
-      </MainContent>
-    </DashboardContainer>
+    <>
+      <DashboardContainer>
+        <Sidebar isOpen={isSidebarOpen} />
+        <ContentArea>
+          <Header onToggleSidebar={handleToggleSidebar} isSidebarOpen={isSidebarOpen} />
+          {isSidebarOpen && (
+            <>
+              <DashboardBar />
+              <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+                <ProductList />
+                <ClientList />
+              </div>
+            </>
+          )}
+        </ContentArea>
+      </DashboardContainer>
+    </>
   );
 };
 

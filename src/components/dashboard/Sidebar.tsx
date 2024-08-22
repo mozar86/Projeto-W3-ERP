@@ -1,16 +1,21 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { SidebarContainer, Logo, ContactButton } from "./Sidebar-Styles";
+import { SidebarContainer, Logo, ContactButton, SidebarContent } from "./Sidebar-Styles";
 
+interface SidebarProps {
+  isOpen: boolean;
+};
 
-const Sidebar = ({ isVisible }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
   return (
-    <SidebarContainer isVisible={isVisible}>
-      <Logo src="/path/to/logo.png" alt="w3ERP" />
-      <NavLink to="/dashboard">Dashboard</NavLink>
-      <NavLink to="/predicoes">Predições</NavLink>
-      <NavLink to="/produtos">Produtos</NavLink>
-      <ContactButton src="/path/to/contact-button.png" alt="Fale Conosco" />
+    <SidebarContainer isOpen={isOpen}>
+      <SidebarContent isOpen={isOpen}>
+        <Logo src="/path/to/logo.png" alt="w3ERP" />
+        <NavLink to="/dashboard">Dashboard</NavLink>
+        <NavLink to="/predicoes">Predições</NavLink>
+        <NavLink to="/produtos">Produtos</NavLink>
+        <ContactButton src="/path/to/contact-button.png" alt="Fale Conosco" />
+      </SidebarContent>
     </SidebarContainer>
   );
 };

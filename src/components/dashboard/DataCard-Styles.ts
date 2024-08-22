@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DataCardContainer = styled.div`
-  background-color: #001C98;
+  background-color: #02156A;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
