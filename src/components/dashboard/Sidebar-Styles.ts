@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 interface SidebarContainerProps {
@@ -20,16 +21,20 @@ export const SidebarContainer = styled.div<SidebarContainerProps>`
 
 export const SidebarContent = styled.div<SidebarContentProps>`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
+  align-content: center;
+  align-items: center;
   width: 100%;
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
   padding: 1rem;
 `;
 
 export const Logo = styled.img`
   width: 80%;
   margin-bottom: 2rem;
+  padding-top: 1rem;
 `;
 
 export const ContactButton = styled.img`
@@ -37,7 +42,7 @@ export const ContactButton = styled.img`
   margin-top: auto;
 `;
 
-export const SidebarLink = styled.a`
+export const StyledNavLink = styled(NavLink)<{ isActive?: boolean }>`
   display: block;
   font-size: 1rem;
   color: #fff;
@@ -48,5 +53,6 @@ export const SidebarLink = styled.a`
     text-decoration: underline;
   }
 `;
+
 
 

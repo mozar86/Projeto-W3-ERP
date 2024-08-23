@@ -10,11 +10,13 @@ import {
   UserIcon,
   UserInfo,
   UserName,
+  CatracaIcon,
+  LogoutIcon,
 } from "./Header-Styles";
 
 interface HeaderProps {
   onToggleSidebar: () => void;
-  isSidebarOpen: boolean;
+  isSidebarOpen: any;
 }
 
 const Header: React.FC<HeaderProps> = ({
@@ -30,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <HeaderContainer isSidebarOpen={isSidebarOpen}>
       <MenuButton onClick={onToggleSidebar}>
-        <img src="../src/assets/outline/menu/icon.png" alt="menu" />
+        <img src="../src/assets/icon.png" alt="menu" />
       </MenuButton>
       <UserMenuContainer>
         <UserProfile onClick={handleUserMenuToggle}>
@@ -42,10 +44,14 @@ const Header: React.FC<HeaderProps> = ({
         </UserProfile>
         {isUserMenuOpen && (
           <UserMenu>
-            <UserMenuItem>Configurações</UserMenuItem>
+            <UserMenuItem>
+              <CatracaIcon src="../src/assets/catraca-config.png" alt="configurações" />
+              Configurações
+            </UserMenuItem>
             <UserMenuItem
               onClick={() => (window.location.href = "/login")}
             >
+              <LogoutIcon src="../src/assets/seta-sair.png" alt="Logout" />
               Sair
             </UserMenuItem>
           </UserMenu>

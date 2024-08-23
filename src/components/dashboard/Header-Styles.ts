@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const HeaderContainer = styled.header`
   width: 100%;
   background-color: #ffffff;
@@ -68,21 +67,34 @@ export const UserEmail = styled.span`
 
 export const UserMenu = styled.ul`
   position: absolute;
-  top: 70px;
-  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  top: 30px;
   background-color: white;
-  border-radius: 4px;
+  border-radius: 16px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   list-style: none;
   padding: 10px;
-  margin-top: 8px;
-  min-width: 150px;
+  margin-top: 12px;
+  width: 170px;
 
   overflow: hidden;
 `;
 
+export const CatracaIcon = styled.img`
+  width: 25px;
+  height: 25px;
+`;
+
+export const LogoutIcon = styled.img`
+  width: 25px;
+  height: 25px;
+`;
+
 export const UserMenuItem = styled.li`
-  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
   cursor: pointer;
   color: #757575;
 
