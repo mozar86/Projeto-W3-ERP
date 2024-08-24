@@ -1,52 +1,48 @@
 import React from "react";
-import { SidebarContainer, Logo, ContactButton, SidebarContent, StyledNavLink } from "./Sidebar-Styles";
+import {
+  SidebarContainer,
+  Logo,
+  ContactButton,
+  SidebarContent,
+  StyledNavLink,
+  DashboardIcon,
+  PredicoesIcon,
+  ProdutosIcon,
+  DivNavLink,
+  ButtonImage,
+  ContactButtonDiv,
+} from "./Sidebar-Styles";
 
 interface SidebarProps {
   isOpen: boolean;
-};
+}
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
   return (
     <SidebarContainer isOpen={isOpen}>
       <SidebarContent isOpen={isOpen}>
-        <Logo src="../src/assets/logo.png" alt="w3ERP" />
-        <StyledNavLink to={'/dashboard'}>
-          Dashboard
-        </StyledNavLink>
-        <StyledNavLink to={'/predicoes'}>
-          Predições
-        </StyledNavLink>
-        <StyledNavLink to={'/produtos'}>
-          Produtos
-        </StyledNavLink>
-        <ContactButton src="/path/to/contact-button.png" alt="Fale Conosco" />
+        <Logo src={isOpen ? "../src/assets/logo.png" : "../src/assets/logo-w3.png"} alt="w3ERP" isOpen={isOpen} />
+        <DivNavLink isOpen={isOpen}>
+          <StyledNavLink to="/dashboard" isOpen={isOpen}>
+            <DashboardIcon src="../src/assets/dashboard-icon.png" alt="Dashboard" isOpen={isOpen} />
+            {isOpen && "Dashboard"}
+          </StyledNavLink>
+          <StyledNavLink to="/predicoes" isOpen={isOpen}>
+            <PredicoesIcon src="../src/assets/predicoes-icon.png" alt="Predições" isOpen={isOpen} />
+            {isOpen && "Predições"}
+          </StyledNavLink>
+          <StyledNavLink to="/produtos" isOpen={isOpen}>
+            <ProdutosIcon src="../src/assets/produtos-icon.png" alt="Produtos" isOpen={isOpen} />
+            {isOpen && "Produtos"}
+          </StyledNavLink>
+        </DivNavLink>
+        <ContactButtonDiv isOpen={isOpen}>
+          <ButtonImage src="../src/assets/contact-button-2.png" alt="Botão Fale Conosco" />
+          <ContactButton src="../src/assets/contact-button.png" alt="Fale Conosco" />
+        </ContactButtonDiv>
       </SidebarContent>
     </SidebarContainer>
   );
 };
 
 export default Sidebar;
-
-/* Perguntar a Pedro pq está dando erro
-
-<DashboardIcon src="../src/assets/dashboard-icon.png" alt="Dashboard" />
-<PredicoesIcon src="../src/assets/predicoes-icon.png" alt="predições" />
-<ProdutosIcon src="../src/assets/produtos-icon.png" alt="produtos" />
-
-Estilos:
-
-export const DashboardIcon = styled.img`
-  width: 25px;
-  height: 25px;
-`;
-
-export const PredicoesIcon = styled.img`
-  width: 25px;
-  height: 25px;
-`;
-
-export const ProdutosIcon = styled.img`
-  width: 25px;
-  height: 25px;
-`;
-*/
