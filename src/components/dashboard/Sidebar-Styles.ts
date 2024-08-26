@@ -5,14 +5,14 @@ interface SidebarProps {
 }
 
 export const SidebarContainer = styled.div<SidebarProps>`
-  width: ${({ isOpen }) => (isOpen ? "14.27%" : "6.09%")};
+  width: ${({ isOpen }) => (isOpen ? "15%" : "7.5%")};
   background-color: #001C98;
   height: 100vh;
   transition: width 0.3s ease-in-out;
 `;
 
 export const SidebarContent = styled.div<SidebarProps>`
-  padding: 20px;
+  padding: 30px;
 `;
 
 export const Logo = styled.img<SidebarProps>`
@@ -26,26 +26,30 @@ export const DivNavLink = styled.div<SidebarProps>`
   display: flex;
   flex-direction: column;
   margin-bottom: 200px;
+  margin-left: ${({ isOpen }) => (isOpen ? "-20px" : "0px")};
 `;
 
 export const StyledNavLink = styled.div<SidebarProps>`
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 12px;
+  font-size: ${({ isOpen }) => (isOpen ? "14px" : "10px")};
   text-decoration: none;
   color: white;
   transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
 
   &:hover {
-    background-color: #7682C1;
-    box-shadow: 0px 0px 10px #7682C1;
+    background-color: rgba(118, 130, 193, 0.5);
+    box-shadow: 0px 0px 0px #7682C1;
+    border-radius: 3px;
   }
 `;
 
 export const DashboardIcon = styled.img<SidebarProps>`
-  width: 25px;
-  height: 25px;
-  margin-right: ${({ isOpen }) => (isOpen ? "10px" : "0")};
+  width: 20px;
+  height: 20px;
+  margin-right: ${({ isOpen }) => (isOpen ? "8px" : "0")};
   transition: margin-right 0.3s ease-in-out;
 `;
 
@@ -54,23 +58,23 @@ export const ProdutosIcon = styled(DashboardIcon)``;
 
 export const ContactButtonDiv = styled.div`
   position: relative;
-  margin-top: 20px;
+  margin-top: 30px;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
 `;
 
 export const ButtonImage = styled.img`
   position: absolute;
-  margin-left: 12px;
+  margin-left: -3px;
   left: 10px; 
-  top: -38px; 
-  width: 80px; 
+  top: -45px; 
+  width: 100px; 
   z-index: 1; 
 `;
 
 export const ContactButton = styled.img`
   position: relative;
-  margin-left: 12px;
-  width: 100px; 
+  margin-left: -3px;
+  width: 120px; 
   height: auto;
   z-index: 0; 
 `;

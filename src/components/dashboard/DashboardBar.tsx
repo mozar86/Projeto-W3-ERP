@@ -2,8 +2,15 @@ import React from "react";
 import { DashboardBarContainer, Title, FilterMenu, DataCardContainer, DashboardBarTop } from "./DashboardBar-Styles";
 import DataCard from "./DataCard";
 
+const DashboardBar: React.FC = () => {
 
-const DashboardBar = () => {
+  const dataCards = [
+    { title: "Total", title2: "Produtos em alta", content: "120", content2: "+13%" },
+    { title: "Total", title2: "Produtos em baixa", content: "56", content2: "-29%" },
+    { title: "Total", title2: "Clientes em alta", content: "501", content2: "+25%" },
+    { title: "Total", title2: "Clientes em baixa", content: "103", content2: "-15%" }
+  ];
+
   return (
     <DashboardBarContainer>
       <DashboardBarTop>
@@ -16,10 +23,15 @@ const DashboardBar = () => {
         </FilterMenu>
       </DashboardBarTop>
       <DataCardContainer>
-        <DataCard title="Produtos" value="120" />
-        <DataCard title="Clientes" value="56" />
-        <DataCard title="Vendas" value="501" />
-        <DataCard title="Lucros" value="103" />
+        {dataCards.map((data, index) => (
+          <DataCard
+            key={index}
+            title={data.title}
+            title2={data.title2}
+            content={data.content}
+            content2={data.content2}
+          />
+        ))}
       </DataCardContainer>
     </DashboardBarContainer>
   );
