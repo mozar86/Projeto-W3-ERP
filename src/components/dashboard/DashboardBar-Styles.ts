@@ -10,7 +10,8 @@ export const DashboardBarContainer = styled.div`
 
 export const Title = styled.h2`
   color: #fff;
-  margin-bottom: 1rem;
+  margin-top: 0.6rem;
+  margin-left: 15px;
 `;
 
 export const DashboardBarTop = styled.div`
@@ -19,7 +20,9 @@ export const DashboardBarTop = styled.div`
 `;
 
 export const FilterMenu = styled.select`
+  margin-top: 0.6rem;
   margin-bottom: 2rem;
+  margin-right: 15px;
   padding: 0.5rem;
   border-radius: 8px;
   border: 1px solid #ccc;

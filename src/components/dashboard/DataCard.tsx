@@ -1,5 +1,16 @@
 import React from "react";
-import { DataCardContainer, DataCardTitle, DataCardContent, DataCardCircle, DataCardPercentage } from "./DataCard-Styles";
+import {
+  DataCardContainer,
+  DataCardTitle,
+  DataCardSubtitle,
+  DataCardCircle,
+  DataCardPercentage,
+  DataCardInfoContainer,
+  DataCardNumber,
+  DataCardContentPercentage,
+  CardTitle,
+  CardNumber,
+} from "./DataCard-Styles";
 
 interface DataCardProps {
   title: string;
@@ -8,22 +19,43 @@ interface DataCardProps {
   content2: string;
 }
 
-const DataCard: React.FC<DataCardProps> = ({ title, title2, content, content2 }) => {
-  const percentage = parseInt(content2.replace('%', '').replace('+', '').replace('-', ''), 10);
+const DataCard: React.FC<DataCardProps> = ({
+  title,
+  title2,
+  content,
+  content2,
+}) => {
+  const percentage = parseInt(
+    content2.replace("%", "").replace("+", "").replace("-", ""),
+    10
+  );
+  const isNegative = content2.includes('-');
+
+  const [firstWord, ...restWords] = title2.split(" ");
 
   return (
     <DataCardContainer>
-      <DataCardTitle>
-        {title} {title2}
-      </DataCardTitle>
-      <DataCardContent>
-        {content} {content2}
-      </DataCardContent>
       <DataCardCircle percentage={percentage}>
-        <DataCardPercentage>
-          {content2}
-        </DataCardPercentage>
+        <DataCardPercentage>{percentage}%</DataCardPercentage>
       </DataCardCircle>
+      <DataCardInfoContainer>
+        <CardTitle>
+          <DataCardTitle>{title}</DataCardTitle>
+          <DataCardSubtitle>
+            &nbsp;
+            <span>
+              <strong>
+                {firstWord}
+              </strong> 
+              &nbsp;{restWords.join(" ")}
+            </span>
+          </DataCardSubtitle>
+        </CardTitle>
+        <CardNumber>
+          <DataCardNumber>{content}</DataCardNumber>
+          <DataCardContentPercentage isNegative={isNegative}>{content2}</DataCardContentPercentage>
+        </CardNumber>
+      </DataCardInfoContainer>
     </DataCardContainer>
   );
 };
