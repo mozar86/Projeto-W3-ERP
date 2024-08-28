@@ -13,6 +13,27 @@ export const DataCardContainer = styled.div`
   justify-content: space-between;
 `;
 
+export const DataCardPercentage = styled.span`
+  font-size: 14px;
+  font-weight: bold;
+  color: #c5cff9;
+  position: absolute;
+`;
+
+export const DataCardContentPercentage = styled.div<{ isNegative: boolean }>`
+  display: flex;
+  align-items: center;
+  font-size: 8px;
+  font-weight: lighter;
+  color: #ffffff;
+  background-color: ${({ isNegative }) => (isNegative ? '#FF3333' : '#00C247')};
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-top: 8px;
+  margin-left: 10px;
+  height: 16px;
+`;
+
 export const DataCardCircle = styled.div<{ percentage: number }>`
   width: 50px;
   height: 50px;
@@ -25,13 +46,6 @@ export const DataCardCircle = styled.div<{ percentage: number }>`
   align-items: center;
   justify-content: center;
   position: relative;
-`;
-
-export const DataCardPercentage = styled.span`
-  font-size: 14px;
-  font-weight: bold;
-  color: #c5cff9;
-  position: absolute;
 `;
 
 export const DataCardInfoContainer = styled.div`
@@ -76,16 +90,5 @@ export const DataCardNumber = styled.div`
   margin-top: 5px;
 `;
 
-export const DataCardContentPercentage = styled.div<{ isNegative: boolean }>`
-  display: flex;
-  align-items: center;
-  font-size: 8px;
-  font-weight: lighter;
-  color: #ffffff;
-  background-color: ${({ isNegative }) => (isNegative ? '#FF3333' : '#00C247')};
-  padding: 5px 10px;
-  border-radius: 20px;
-  margin-top: 8px;
-  margin-left: 10px;
-  height: 16px;
-`;
+
+

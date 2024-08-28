@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PredicoesContainer = styled.div`
+export const ProdutosContainer = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
