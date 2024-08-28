@@ -7,21 +7,31 @@ export const ListContainer = styled.div`
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
-export const ListTitle = styled.h2`
-  margin-bottom: 1rem;
+export const ListHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
-export const ListButton = styled.button`
-  background-color: #00a3ff;
+export const ListTitle = styled.h2`
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #001C98;
+  
+  img {
+    margin-right: 0.5rem;
+  }
+`;
+
+export const StatusButton = styled.button<{ isActive: boolean }>`
+  background-color: ${({ isActive }) => (isActive ? "#00C247" : "#FF4D4D")};
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   cursor: pointer;
-
-  &:hover {
-    background-color: #007bbf;
-  }
+  margin-left: 0.5rem;
 `;
 
 export const ListTable = styled.div`

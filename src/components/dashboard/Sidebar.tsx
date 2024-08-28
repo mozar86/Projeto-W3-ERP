@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import {
   SidebarContainer,
   Logo,
@@ -21,24 +22,52 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
   return (
     <SidebarContainer isOpen={isOpen}>
       <SidebarContent isOpen={isOpen}>
-        <Logo src={isOpen ? "../src/assets/logo.png" : "../src/assets/logo-w3.png"} alt="w3ERP" isOpen={isOpen} />
+        <Logo
+          src={isOpen ? "../src/assets/logo.png" : "../src/assets/logo-w3.png"}
+          alt="w3ERP"
+          isOpen={isOpen}
+        />
         <DivNavLink isOpen={isOpen}>
-          <StyledNavLink to="/dashboard" isOpen={isOpen}>
-            <DashboardIcon src="../src/assets/dashboard-icon.png" alt="Dashboard" isOpen={isOpen} />
-            {isOpen && "Dashboard"}
-          </StyledNavLink>
-          <StyledNavLink to="/predicoes" isOpen={isOpen}>
-            <PredicoesIcon src="../src/assets/predicoes-icon.png" alt="Predições" isOpen={isOpen} />
-            {isOpen && "Predições"}
-          </StyledNavLink>
-          <StyledNavLink to="/produtos" isOpen={isOpen}>
-            <ProdutosIcon src="../src/assets/produtos-icon.png" alt="Produtos" isOpen={isOpen} />
-            {isOpen && "Produtos"}
-          </StyledNavLink>
+          <NavLink to="/dashboard" className={({ isActive }) => (isActive ? "active" : "")}>
+            <StyledNavLink isOpen={isOpen}>
+              <DashboardIcon
+                src="../src/assets/dashboard-icon.png"
+                alt="Dashboard"
+                isOpen={isOpen}
+              />
+              {isOpen && "Dashboard"}
+            </StyledNavLink>
+          </NavLink>
+          <NavLink to="/predicoes" className={({ isActive }) => (isActive ? "active" : "")}>
+            <StyledNavLink isOpen={isOpen}>
+              <PredicoesIcon
+                src="../src/assets/predicoes-icon.png"
+                alt="Predições"
+                isOpen={isOpen}
+              />
+              {isOpen && "Predições"}
+            </StyledNavLink>
+          </NavLink>
+          <NavLink to="/produtos" className={({ isActive }) => (isActive ? "active" : "")}>
+            <StyledNavLink isOpen={isOpen}>
+              <ProdutosIcon
+                src="../src/assets/produtos-icon.png"
+                alt="Produtos"
+                isOpen={isOpen}
+              />
+              {isOpen && "Produtos"}
+            </StyledNavLink>
+          </NavLink>
         </DivNavLink>
         <ContactButtonDiv isOpen={isOpen}>
-          <ButtonImage src="../src/assets/contact-button-2.png" alt="Botão Fale Conosco" />
-          <ContactButton src="../src/assets/contact-button.png" alt="Fale Conosco" />
+          <ButtonImage
+            src="../src/assets/contact-button-2.png"
+            alt="Botão Fale Conosco"
+          />
+          <ContactButton
+            src="../src/assets/contact-button.png"
+            alt="Fale Conosco"
+          />
         </ContactButtonDiv>
       </SidebarContent>
     </SidebarContainer>

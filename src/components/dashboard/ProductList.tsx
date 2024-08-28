@@ -1,8 +1,9 @@
 import React from "react";
 import { 
   ListContainer, 
-  ListTitle, 
-  ListButton, 
+  ListHeader, 
+  ListTitle,  
+  StatusButton, 
   ListTable, 
   ListRow, 
   ListCell 
@@ -11,8 +12,16 @@ import {
 const ProductList = () => {
   return (
     <ListContainer>
-      <ListTitle>Produtos</ListTitle>
-      <ListButton>Adicionar Produto</ListButton>
+      <ListHeader>
+        <ListTitle>
+          <img src="../src/assets/product-icon.png" alt="Ícone de Produto" />
+          Produtos
+        </ListTitle>
+        <div>
+          <StatusButton isActive={true}>Em alta</StatusButton>
+          <StatusButton isActive={false}>Em baixa</StatusButton>
+        </div>
+      </ListHeader>
       <ListTable>
         <ListRow>
           <ListCell>ID</ListCell>
@@ -21,10 +30,11 @@ const ProductList = () => {
         </ListRow>
         {/* Mock de dados */}
         <ListRow>
-          <ListCell>1</ListCell>
-          <ListCell>Produto A</ListCell>
-          <ListCell>25%</ListCell>
+          <ListCell>001</ListCell>
+          <ListCell>Papel higiênico</ListCell>
+          <ListCell>+72%</ListCell>
         </ListRow>
+        {/* Adicione mais linhas de dados aqui */}
       </ListTable>
     </ListContainer>
   );

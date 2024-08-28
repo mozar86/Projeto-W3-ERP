@@ -35,10 +35,10 @@ export const StyledNavLink = styled.div<SidebarProps>`
   align-items: center;
   padding: 12px;
   font-size: ${({ isOpen }) => (isOpen ? "14px" : "10px")};
-  text-decoration: none;
   color: white;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
+  text-decoration: none !important;
 
   &:hover {
     background-color: rgba(118, 130, 193, 0.5);

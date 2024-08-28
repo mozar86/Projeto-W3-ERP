@@ -3,14 +3,13 @@ import {
   DataCardContainer,
   DataCardTitle,
   DataCardSubtitle,
-  DataCardCircle,
-  DataCardPercentage,
   DataCardInfoContainer,
   DataCardNumber,
   DataCardContentPercentage,
   CardTitle,
   CardNumber,
 } from "./DataCard-Styles";
+import RadialBarDashboard from "./RadialBarDashboard";
 
 interface DataCardProps {
   title: string;
@@ -35,9 +34,7 @@ const DataCard: React.FC<DataCardProps> = ({
 
   return (
     <DataCardContainer>
-      <DataCardCircle percentage={percentage}>
-        <DataCardPercentage>{percentage}%</DataCardPercentage>
-      </DataCardCircle>
+      <RadialBarDashboard percentageGraphic={percentage} />
       <DataCardInfoContainer>
         <CardTitle>
           <DataCardTitle>{title}</DataCardTitle>
