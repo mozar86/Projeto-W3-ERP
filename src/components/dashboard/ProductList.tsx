@@ -34,7 +34,7 @@ const ProductList = () => {
           <ListCell>Papel higiênico</ListCell>
           <ListCell>+72%</ListCell>
         </ListRow>
-        {/* Adicione mais linhas de dados aqui */}
+        {/* Lembrar de dicionar mais linhas de dados aqui */}
       </ListTable>
     </ListContainer>
   );
