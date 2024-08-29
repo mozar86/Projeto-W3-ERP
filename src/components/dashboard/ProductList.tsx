@@ -1,40 +1,49 @@
-import React from "react";
-import { 
-  ListContainer, 
-  ListHeader, 
-  ListTitle,  
-  StatusButton, 
-  ListTable, 
-  ListRow, 
-  ListCell 
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import {
+  ListContainer,
+  ListTitle,
+  ListTable,
+  ListRow,
+  ListCell,
 } from "./ProductList-Styles";
 
+interface Product {
+  id: number;
+  name: string;
+  percentage: number;
+}
+
 const ProductList = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/products")
+      .then((response) => {
+        setProducts(response.data);
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar produtos:", error);
+      });
+  }, []);
+
   return (
     <ListContainer>
-      <ListHeader>
-        <ListTitle>
-          <img src="../src/assets/product-icon.png" alt="Ícone de Produto" />
-          Produtos
-        </ListTitle>
-        <div>
-          <StatusButton isActive={true}>Em alta</StatusButton>
-          <StatusButton isActive={false}>Em baixa</StatusButton>
-        </div>
-      </ListHeader>
+      <ListTitle>Produtos</ListTitle>
       <ListTable>
         <ListRow>
           <ListCell>ID</ListCell>
           <ListCell>Produto</ListCell>
           <ListCell>Percentual</ListCell>
         </ListRow>
-        {/* Mock de dados */}
-        <ListRow>
-          <ListCell>001</ListCell>
-          <ListCell>Papel higiênico</ListCell>
-          <ListCell>+72%</ListCell>
-        </ListRow>
-        {/* Lembrar de dicionar mais linhas de dados aqui */}
+        {products.map((product) => (
+          <ListRow key={product.id}>
+            <ListCell>{product.id.toString().padStart(3, '0')}</ListCell>
+            <ListCell>{product.name}</ListCell>
+            <ListCell>{`${product.percentage * 100}%`}</ListCell>
+          </ListRow>
+        ))}
       </ListTable>
     </ListContainer>
   );
