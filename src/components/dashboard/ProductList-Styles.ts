@@ -14,12 +14,53 @@ export const ListHeader = styled.div`
   margin-bottom: 1rem;
 `;
 
+export const TitleProdutcs = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const SectionTitle = styled.section`
+  display: flex;
+  align-items: center;
+`;
+
+export const ProductIcon = styled.img`
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  color: #001c98;
+`;
+
+export const ButtonTitle = styled.button<{ filter: "alta" | "baixa" }>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background-color: ${({ filter }) => (filter === "alta" ? "#00a800" : "#ff0000")};
+  border: none;
+  padding: 0;
+  color: #FFFFFF;
+  width: 110px;
+  height: 30px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  left: ${({ filter }) => (filter === "alta" ? "calc(110px - 42%)" : "0")};
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
 export const ListTitle = styled.h2`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   display: flex;
   align-items: center;
-  color: #001C98;
+  color: #212121;
+  margin-left: 20px;
 
   svg {
     margin-right: 0.5rem;
@@ -43,23 +84,55 @@ export const StatusContainer = styled.div`
     }
 
     &.inactive {
-      background-color: #FF0000;
+      background-color: #ff0000;
     }
   }
 `;
 
 export const ListTable = styled.div`
   margin-top: 1rem;
-  border-radius: 8px;
   overflow: hidden;
+`;
+
+export const ListRowTitles = styled.div`
+  display: flex;
+  padding: 0.75rem 1rem;
+  background-color: #001c98;
+  border-bottom: 1px solid #e0e0e0;
+  width: 530px;
+  border-radius: 12px 12px 0px 0px;
+  color: #fff;
+
+  &:nth-child(even) {
+    background-color: #f1f1f1;
+  }
+`;
+
+export const ListCellTitles = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  text-align: left;
+  color: #c5cfff;
+  font-weight: 500;
+
+  &:first-child {
+    flex: 0.5;
+  }
+
+  &:last-child {
+    text-align: right;
+  }
 `;
 
 export const ListRow = styled.div`
   display: flex;
-  justify-content: space-between;
   padding: 0.75rem 1rem;
   background-color: #f9f9f9;
   border-bottom: 1px solid #e0e0e0;
+  font-family: 'Sora', sans-serif;
+  width: 530px;
+  color: #212121;
 
   &:nth-child(even) {
     background-color: #f1f1f1;
@@ -67,9 +140,11 @@ export const ListRow = styled.div`
 `;
 
 export const ListCell = styled.div`
+  display: flex;
+  justify-content: space-between;
   flex: 1;
   text-align: left;
-  color: #333;
+  color: #212121;
   font-weight: 500;
 
   &:first-child {

@@ -56,7 +56,7 @@ export const DataCardInfoContainer = styled.div`
 
 export const CardTitle = styled.div`
   display: flex;
-  margin-right: 10px;
+  margin-right: 40px;
 `;
 
 export const DataCardTitle = styled.div`

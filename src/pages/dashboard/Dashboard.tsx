@@ -22,7 +22,7 @@ const Dashboard: React.FC = () => {
           {isSidebarOpen && (
             <>
               <DashboardBar />
-              <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+              <div style={{ display: "flex" }}>
                 <ProductList />
                 <ClientList />
               </div>
