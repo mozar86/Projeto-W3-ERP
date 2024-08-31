@@ -20,7 +20,7 @@ interface Client {
   name: string;
   percentage: number;
 }
-// Ajustar lógica para que o GET em Clients funcione
+// Ajustar lógica para que o GET em Clients funcione.
 const ClientList = () => {
   const [clients, setClients] = useState<Client[]>([]);
   const [filteredClients, setFilteredClients] = useState<Client[]>([]);
