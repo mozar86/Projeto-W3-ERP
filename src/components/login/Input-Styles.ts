@@ -79,8 +79,8 @@ export const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
 `;
 
 export const ForgotPasswordLink = styled.a`
-  margin-left: 30px;
-  margin-bottom: 11px;
+  margin-left: 65px;
+  margin-bottom: 15px;
   font-size: 0.9rem;
   color: #616161;
   text-decoration: none;

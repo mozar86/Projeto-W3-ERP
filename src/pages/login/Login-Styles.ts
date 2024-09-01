@@ -13,21 +13,23 @@ export const LoginForm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 20%;
+  max-width: 30%;
   margin-left: 17%;
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
   h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    margin-left: 10px;
     color: #333;
   }
 
   p {
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
+    margin-left: 10px;
     color: #555;
   }
 `;
@@ -50,7 +52,7 @@ export const LoginBanner = styled.div`
 `;
 
 export const LoginButton = styled.button`
-  width: 54.5vh;
+  width: 49vh;
   height: 50px;
   background-color: #001C98;
   margin-left: 4px;
@@ -64,6 +66,12 @@ export const LoginButton = styled.button`
   &:hover {
     background-color: #0056b3;
   }
+`;
+
+export const ErrorMessage = styled.p`
+  color: red;
+  margin-top: 10px;
+  text-align: center;
 `;
 
 export const CheckboxForgotPasswordContainer = styled.div`
