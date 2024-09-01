@@ -2,9 +2,10 @@ import { useState } from "react";
 import Header from "../../components/dashboard/Header";
 import Sidebar from "../../components/dashboard/Sidebar";
 import { ContentArea } from "../dashboard/Dashboard-Styles";
-import { DetalhamentoContainer } from "./Detalhamento-Styles";
 import ClientList from "../../components/detalhamento/ClientList";
 import DashboardBar from "../../components/detalhamento/DashboardBar";
+import { DetalhamentoContainer } from "./Detalhamento-Styles";
+
 
 
 const Detalhamento: React.FC = () => {
