@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const DetalhamentoContainer = styled.div`
+export const DetailingContainer = styled.div`
   display: flex;
-  width: 100%;
+  width: 100px;
   height: 100vh;
   overflow: hidden;
 `;

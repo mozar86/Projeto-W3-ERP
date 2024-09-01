@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-export const ContentArea = styled.div<{ isSidebarOpen: boolean }>`
+export const PredicoesContainer = styled.div`
   display: flex;
   width: 100%;
-  background-color: #f5f5f5;
+  height: 100vh;
+  overflow: hidden;
 `;
 
 export const PageTitle = styled.h1`
@@ -13,18 +14,38 @@ export const PageTitle = styled.h1`
   color: #333;
 `;
 
+export const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+  align-content: center;
+`;
+
 export const SearchBar = styled.input`
-  width: 50%;
+  width: 270px;
   padding: 1rem;
-  margin: 1rem 2rem;
+  margin: 0.5rem 1.5rem;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #E0E0E0;
+  outline: none;
   font-size: 1rem;
 `;
 
-export const CardGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  padding: 0 2rem;
+export const SearchIcon = styled.img`
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+`;
+
+export const ContentArea = styled.div`
+  width: 100%;
+  padding-right: 2rem;
+  background-color: #f5f5f5;
+  margin-left: 2rem;
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding-top: 2rem;
+  }
 `;

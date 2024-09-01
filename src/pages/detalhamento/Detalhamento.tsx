@@ -4,7 +4,7 @@ import Sidebar from "../../components/dashboard/Sidebar";
 import { ContentArea } from "../dashboard/Dashboard-Styles";
 import ClientList from "../../components/detalhamento/ClientList";
 import DashboardBar from "../../components/detalhamento/DashboardBar";
-import { DetalhamentoContainer } from "./Detalhamento-Styles";
+import { DetailingContainer } from "./Detalhamento-Styles";
 
 
 
@@ -17,7 +17,7 @@ const Detalhamento: React.FC = () => {
 
     return (
         <>
-            <DetalhamentoContainer>
+            <DetailingContainer>
                 <Sidebar isOpen={isSidebarOpen} />
                 <ContentArea>
                     <Header
@@ -34,7 +34,7 @@ const Detalhamento: React.FC = () => {
                         </>
                     )}
                 </ContentArea>
-            </DetalhamentoContainer>
+            </DetailingContainer>
         </>
     )
 }
