@@ -6,8 +6,6 @@ import ClientList from "../../components/detalhamento/ClientList";
 import DashboardBar from "../../components/detalhamento/DashboardBar";
 import { DetailingContainer } from "./Detalhamento-Styles";
 
-
-
 const Detalhamento: React.FC = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
@@ -16,27 +14,21 @@ const Detalhamento: React.FC = () => {
     };
 
     return (
-        <>
-            <DetailingContainer>
-                <Sidebar isOpen={isSidebarOpen} />
-                <ContentArea>
-                    <Header
-                        onToggleSidebar={handleToggleSidebar}
-                        isSidebarOpen={isSidebarOpen}
-                    />
-                    {isSidebarOpen && (
-                        <>
-                            <DashboardBar />
-                            <div style={{ display: "flex" }}>
-                                <ClientList />
-                                <ClientList />
-                            </div>
-                        </>
-                    )}
-                </ContentArea>
-            </DetailingContainer>
-        </>
-    )
-}
+        <DetailingContainer>
+            <Sidebar isOpen={isSidebarOpen} />
+            <ContentArea>
+                <Header
+                    onToggleSidebar={handleToggleSidebar}
+                    isSidebarOpen={isSidebarOpen}
+                />
+                <DashboardBar />
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <ClientList filter="alta" />
+                    <ClientList filter="baixa" />
+                </div>
+            </ContentArea>
+        </DetailingContainer>
+    );
+};
 
 export default Detalhamento;

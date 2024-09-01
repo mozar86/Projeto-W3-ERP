@@ -52,11 +52,12 @@ export const DataCardInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-left: 15px;
 `;
 
 export const CardTitle = styled.div`
   display: flex;
-  margin-right: 40px;
+  margin-right: 30px;
 `;
 
 export const DataCardTitle = styled.div`
@@ -70,7 +71,7 @@ export const DataCardSubtitle = styled.div`
   color: #c5cff9;
 
   strong {
-    font-weight: bold;
+    font-weight: 600;
   }
 
   span {
@@ -85,7 +86,7 @@ export const CardNumber = styled.div`
 
 export const DataCardNumber = styled.div`
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 600;
   color: #ffffff;
   margin-top: 5px;
 `;

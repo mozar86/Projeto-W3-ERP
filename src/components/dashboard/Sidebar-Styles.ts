@@ -27,7 +27,7 @@ export const DivNavLink = styled.div<SidebarProps>`
   display: flex;
   flex-direction: column;
   margin-bottom: 200px;
-  margin-left: ${({ isOpen }) => (isOpen ? "-17px" : "0px")};
+  margin-left: ${({ isOpen }) => (isOpen ? "-17px" : "0px")};  
 `;
 
 export const StyledNavLink = styled.div<SidebarProps>`

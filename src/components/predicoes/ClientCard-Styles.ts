@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const CardGrid = styled.div`
   display: grid;
@@ -7,15 +8,21 @@ export const CardGrid = styled.div`
   margin-bottom: 2rem;
 `;
 
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`;
+
 export const CardContainer = styled.div`
   background-color: white;
+  width: 250px;
+  min-height: 200px;  /* Altura mínima consistente para todos os cards */
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: pointer;
 `;
 
 export const CardHeader = styled.div`
@@ -25,17 +32,45 @@ export const CardHeader = styled.div`
   margin-bottom: 1rem;
 
   h2 {
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 11px;
+    font-weight: 600;
     color: #212121;
+    padding-left: 10px;
+    margin: 0;
+    white-space: nowrap;  /* Evita quebra de linha */
+    overflow: hidden;
+    text-overflow: ellipsis;  /* Mostra reticências se o texto for muito longo */
   }
+
+  h3 {
+    font-size: 11px;
+    font-weight: 400;
+    color: #00c247;
+    margin-left: 4px;
+  }
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const IconElipse = styled.img`
+  width: 5px;
+  height: 5px;
+  margin-left: 10px;
 `;
 
 export const ProductIcon = styled.img`
   width: 20px;
   height: 20px;
-  margin-left: 10px;
+  margin-right: 7px;
   color: #001c98;
+`;
+
+export const SetaImage = styled.img`
+  width: 20px;
+  height: 20px;
 `;
 
 export const ClientInfo = styled.div`
@@ -51,6 +86,7 @@ export const ClientInfo = styled.div`
     justify-content: center;
     align-items: center;
     margin-right: 1rem;
+    margin-bottom: 3px;
 
     svg {
       width: 24px;
@@ -68,8 +104,8 @@ export const ClientInfo = styled.div`
     }
 
     .status {
-      font-size: 0.875rem;
-      color: #4caf50; /* Verde para status ativo */
+      font-size: 11px;
+      color: #4caf50;
     }
   }
 `;
@@ -81,18 +117,19 @@ export const ProductList = styled.table`
   padding: 1rem;
   margin-top: 1rem;
   border-collapse: collapse;
+  text-decoration: none !important;
 
   th {
-    font-size: 0.875rem;
+    font-size: 11px;
     font-weight: 600;
-    color: #7968e6;
+    color: #424242;
     text-align: left;
     padding-bottom: 0.5rem;
   }
 
   td {
-    font-size: 0.875rem;
-    color: #212121;
+    font-size: 11px;
+    color: #424242;
     padding: 0.5rem 0;
     font-weight: 500;
   }
@@ -106,10 +143,10 @@ export const ProductItem = styled.tr`
   }
 
   td {
-    font-weight: 600;
+    font-weight: 400;
     &:last-child {
       text-align: right;
-      color: #212121;
+      color: #424242;
     }
   }
 `;

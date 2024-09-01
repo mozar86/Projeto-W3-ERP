@@ -133,6 +133,7 @@ export const ListRow = styled.div`
   font-family: 'Sora', sans-serif;
   width: 530px;
   color: #212121;
+  cursor: pointer;
 
   &:nth-child(even) {
     background-color: #f1f1f1;
@@ -144,8 +145,9 @@ export const ListCell = styled.div`
   justify-content: space-between;
   flex: 1;
   text-align: left;
+  height: 20px;
   color: #212121;
-  font-weight: 500;
+  font-weight: 400;
 
   &:first-child {
     flex: 0.5;

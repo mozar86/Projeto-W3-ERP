@@ -6,7 +6,7 @@ export const DataCardContainer = styled.div`
   border-radius: 15px;
   padding: 15px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 250px;
+  width: 200px;
   height: 80px;
   margin-bottom: 12px;
   align-items: center;

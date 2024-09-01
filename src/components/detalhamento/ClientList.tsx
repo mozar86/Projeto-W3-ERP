@@ -4,7 +4,6 @@ import {
   ListContainer,
   SectionTitle,
   ListTitle,
-  ButtonTitle,
   ListTable,
   ListRow,
   ListCell,
@@ -21,17 +20,19 @@ interface Client {
   percentage: number;
 }
 
-const ClientList = () => {
+interface ClientListProps {
+  filter: "alta" | "baixa";
+}
+
+const ClientList: React.FC<ClientListProps> = ({ filter }) => {
   const [clients, setClients] = useState<Client[]>([]);
   const [filteredClients, setFilteredClients] = useState<Client[]>([]);
-  const [filter, setFilter] = useState<"alta" | "baixa">("alta");
 
   useEffect(() => {
     const fetchClients = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/customers"); // Certifique-se de que a URL da API esteja correta.
+        const response = await axios.get("http://localhost:3000/customers"); 
         const fetchedClients = response.data;
-
         setClients(fetchedClients);
         setFilteredClients(
           fetchedClients.filter((client: Client) =>
@@ -46,10 +47,6 @@ const ClientList = () => {
     fetchClients();
   }, [filter]);
 
-  const toggleFilter = () => {
-    setFilter(filter === "alta" ? "baixa" : "alta");
-  };
-
   return (
     <ListContainer>
       <TitleClients>
@@ -60,11 +57,10 @@ const ClientList = () => {
               alt="clientes"
             />
           </ImageDiv>
-          <ListTitle>Clientes</ListTitle>
+          <ListTitle>
+            {filter === "alta" ? "Clientes em alta" : "Clientes em baixa"}
+          </ListTitle>
         </SectionTitle>
-        <ButtonTitle filter={filter} onClick={toggleFilter}>
-          {filter === "alta" ? "Em alta" : "Em baixa"}
-        </ButtonTitle>
       </TitleClients>
       <ListTable>
         <ListRowTitles>

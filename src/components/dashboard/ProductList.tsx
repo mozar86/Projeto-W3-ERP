@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";  
 import axios from "axios";
 import {
   ListContainer,
@@ -25,6 +26,8 @@ const ProductList = () => {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [filter, setFilter] = useState<"alta" | "baixa">("alta");
 
+  const navigate = useNavigate();  
+
   useEffect(() => {
     axios
       .get("http://localhost:3000/products")
@@ -43,6 +46,10 @@ const ProductList = () => {
 
   const toggleFilter = () => {
     setFilter(filter === "alta" ? "baixa" : "alta");
+  };
+
+  const handleProductClick = (id: number) => {
+    navigate(`/detalhamento`);  
   };
 
   return (
@@ -66,10 +73,11 @@ const ProductList = () => {
           <ListCellTitles>Percentual</ListCellTitles>
         </ListRowTitles>
         {filteredProducts.map((product) => (
-          <ListRow key={product.id}>
+          <ListRow key={product.id} onClick={() => handleProductClick(product.id)}>
             <ListCell>{product.id.toString().padStart(3, "0")}</ListCell>
             <ListCell>{product.name}</ListCell>
             <ListCell>{`${(product.percentage * 100).toFixed(2)}%`}</ListCell>
+            <img src="../src/assets/seta-direita.png" alt="seta" />
           </ListRow>
         ))}
       </ListTable>

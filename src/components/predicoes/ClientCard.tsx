@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import {
     CardContainer,
     CardHeader,
@@ -9,6 +8,10 @@ import {
     ProductList,
     ProductItem,
     ProductIcon,
+    TitleContainer,
+    IconElipse,
+    StyledLink,
+    SetaImage,
 } from "./ClientCard-Styles";
 
 interface Product {
@@ -47,7 +50,7 @@ const ClientCard: React.FC = () => {
     return (
         <CardGrid>
             {clients.map((client) => (
-                <Link to={`/predicao/${client.id}`} key={client.id}>
+                <StyledLink to={`/predicao/${client.id}`} key={client.id}>
                     <CardContainer>
                         <CardHeader>
                             <ClientInfo>
@@ -57,10 +60,14 @@ const ClientCard: React.FC = () => {
                                 />
                                 <div className="client-name-status">
                                     <h2>{client.name}</h2>
+                                    <TitleContainer>
+                                        <IconElipse src="../src/assets/icon-elipse.png" alt="icon-elipse" />
+                                        <h3>Status vai aqui</h3>
+                                    </TitleContainer>
                                     <span className="status">{client.status}</span>
                                 </div>
                             </ClientInfo>
-                            <div>→</div>
+                            <SetaImage src="../src/assets/seta-direita.png" alt="seta direita" />
                         </CardHeader>
                         <ProductList>
                             <thead>
@@ -79,7 +86,7 @@ const ClientCard: React.FC = () => {
                             </tbody>
                         </ProductList>
                     </CardContainer>
-                </Link>
+                </StyledLink>
             ))}
         </CardGrid>
     );

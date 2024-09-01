@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";  
 import axios from "axios";
 import {
   ListContainer,
@@ -26,10 +27,12 @@ const ClientList = () => {
   const [filteredClients, setFilteredClients] = useState<Client[]>([]);
   const [filter, setFilter] = useState<"alta" | "baixa">("alta");
 
+  const navigate = useNavigate();  
+
   useEffect(() => {
     const fetchClients = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/customers"); // Certifique-se de que a URL da API esteja correta.
+        const response = await axios.get("http://localhost:3000/customers"); 
         const fetchedClients = response.data;
 
         setClients(fetchedClients);
@@ -48,6 +51,10 @@ const ClientList = () => {
 
   const toggleFilter = () => {
     setFilter(filter === "alta" ? "baixa" : "alta");
+  };
+
+  const handleClientClick = (id: number) => {
+    navigate(`/detalhamento/${id}`);  // Navega para a página de detalhes do cliente
   };
 
   return (
@@ -73,10 +80,11 @@ const ClientList = () => {
           <ListCellTitles>Percentual</ListCellTitles>
         </ListRowTitles>
         {filteredClients.map((client) => (
-          <ListRow key={client.id}>
+          <ListRow key={client.id} onClick={() => handleClientClick(client.id)}>
             <ListCell>{client.id.toString().padStart(3, "0")}</ListCell>
             <ListCell>{client.name}</ListCell>
             <ListCell>{`${(client.percentage * 100).toFixed(2)}%`}</ListCell>
+            <img src="../src/assets/seta-direita.png" alt="seta" />
           </ListRow>
         ))}
       </ListTable>

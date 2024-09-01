@@ -10,8 +10,7 @@ export const PredicoesContainer = styled.div`
 export const PageTitle = styled.h1`
   font-size: 2rem;
   font-weight: bold;
-  margin: 2rem;
-  color: #333;
+  color: #212121;
 `;
 
 export const InputContainer = styled.div`
@@ -22,7 +21,7 @@ export const InputContainer = styled.div`
 
 export const SearchBar = styled.input`
   width: 270px;
-  padding: 1rem;
+  padding: 0.75rem;
   margin: 0.5rem 1.5rem;
   border-radius: 8px;
   border: 1px solid #E0E0E0;
@@ -38,7 +37,7 @@ export const SearchIcon = styled.img`
 
 export const ContentArea = styled.div`
   width: 100%;
-  padding-right: 2rem;
+  padding-right: 1.5rem;
   background-color: #f5f5f5;
   margin-left: 2rem;
 
