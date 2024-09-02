@@ -50,7 +50,7 @@ const ClientCard: React.FC = () => {
     return (
         <CardGrid>
             {clients.map((client) => (
-                <StyledLink to={`/predicao/${client.id}`} key={client.id}>
+                <StyledLink to={`/predicao`} key={client.id}>
                     <CardContainer>
                         <CardHeader>
                             <ClientInfo>

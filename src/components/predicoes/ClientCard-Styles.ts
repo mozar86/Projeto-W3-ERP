@@ -16,7 +16,7 @@ export const StyledLink = styled(Link)`
 export const CardContainer = styled.div`
   background-color: white;
   width: 250px;
-  min-height: 200px;  /* Altura mínima consistente para todos os cards */
+  min-height: 200px;  
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -37,9 +37,9 @@ export const CardHeader = styled.div`
     color: #212121;
     padding-left: 10px;
     margin: 0;
-    white-space: nowrap;  /* Evita quebra de linha */
+    white-space: nowrap;  
     overflow: hidden;
-    text-overflow: ellipsis;  /* Mostra reticências se o texto for muito longo */
+    text-overflow: ellipsis;  
   }
 
   h3 {

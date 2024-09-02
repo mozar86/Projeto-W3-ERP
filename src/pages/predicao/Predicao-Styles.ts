@@ -1,29 +1,29 @@
 import styled from "styled-components";
 
-export const PredicoesContainer = styled.div`
+export const PredicaoContainer = styled.div`
   display: flex;
-  width: 100%;
   height: 100vh;
-  overflow: hidden;
 `;
 
-export const ContentArea = styled.div<{ isSidebarOpen: boolean }>`
-  width: 100%;
-  padding-right: 2rem;
-  background-color: #f5f5f5;
-  margin-left: 2rem;
-`;
-
-export const SidebarContent = styled.div`
+export const ContentArea = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 1rem;
-  width: 14.27%;
-  background-color: #020e56;
-  transition: width 0.3s ease;
+  background-color: #f4f4f4;
+`;
 
-  .sidebar-collapsed & {
-    width: 6.09%;
-  }
+export const DashboardBarBackground = styled.div`
+  background-image: url("../src/assets/dashboard-background.png"); 
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+`;
+
+export const ListWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
 `;

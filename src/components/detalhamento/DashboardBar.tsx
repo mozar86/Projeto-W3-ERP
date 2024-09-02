@@ -1,9 +1,14 @@
 import React from "react";
-import { DashboardBarContainer, Title, DataCardContainer, DashboardBarTop } from "./DashboardBar-Styles";
+import { useNavigate } from "react-router-dom";
+import { DashboardBarContainer, Title, DataCardContainer, DashboardBarTop, BackButtonContainer, SetaSair } from "./DashboardBar-Styles";
 import DataCard from "./DataCard";
 
-
 const DashboardBar: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate(-1); 
+  };
 
   const dataCards = [
     { title: "Total", title2: "Produtos em alta", content: "120", content2: "+13%" },
@@ -16,6 +21,10 @@ const DashboardBar: React.FC = () => {
   return (
     <DashboardBarContainer>
       <DashboardBarTop>
+        <BackButtonContainer onClick={handleBackClick}>
+          <SetaSair src="../src/assets/seta-esquerda.png" alt="seta" />
+          <p>Detalhamento</p>
+        </BackButtonContainer>
         <Title>Papel Higiênico</Title>
       </DashboardBarTop>
       <DataCardContainer>
