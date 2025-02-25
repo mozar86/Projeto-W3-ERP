@@ -1,6 +1,6 @@
-# **Projeto ERP**  
+# **Projeto ERP - Sistema de Gestão Empresarial**  
 
-Este é um projeto de **dashboard interativo** desenvolvido com **React**, que permite a visualização e gerenciamento de produtos e clientes. Ele conta com **componentes reutilizáveis**, integração com uma API para exibição de dados e um layout responsivo.
+O **Projeto ERP** é um **sistema de gestão empresarial** desenvolvido em **React**, focado na administração de produtos e clientes. O sistema permite a visualização de dados essenciais, status de mercado e integração com uma API para gerenciar informações de maneira eficiente.
 
 ---
 
@@ -8,7 +8,7 @@ Este é um projeto de **dashboard interativo** desenvolvido com **React**, que p
 
 - **📊 Dashboard Interativo** – Exibe listas de produtos e clientes.  
 - **🔍 Pesquisa e Filtros** – Permite buscar produtos por nome.  
-- **📦 Listagem de Produtos** – Exibe os produtos com **status de mercado** (em alta/em baixa).  
+- **📦 Gestão de Produtos** – Exibe os produtos com **status de mercado** (Em Alta/Em Baixa).  
 - **📜 Histórico de Predições** – Mostra previsões de produtos esgotando.  
 - **🛠 Sidebar Dinâmica** – Pode ser expandida ou recolhida.  
 - **🖼 Background Customizado** – Tela de previsões com imagem de fundo.  
@@ -60,8 +60,8 @@ Este é um projeto de **dashboard interativo** desenvolvido com **React**, que p
 
 ### **2️⃣ Clonar o repositório:**  
 ```bash
-git clone https://github.com/seu-usuario/nome-do-projeto.git
-cd nome-do-projeto
+git clone https://github.com/mozar86/projeto-erp.git
+cd projeto-erp
 ```
 
 ### **3️⃣ Instalar dependências:**  
@@ -99,7 +99,7 @@ A aplicação será iniciada no endereço: **http://localhost:5173/**
 3. **Listagem de Produtos**:  
    - Busca produtos via `axios` da API.  
    - Filtra produtos conforme **percentual** (exibindo somente os que possuem dados válidos).  
-   - Aplica cores no status (**verde = em alta**, **vermelho = em baixa**).  
+   - Aplica cores no status (**verde = Em Alta**, **vermelho = Em Baixa**).  
 4. **Pesquisa**: Atualiza a exibição de produtos em tempo real conforme o usuário digita.  
 5. **Redirecionamento**: Ao clicar em um produto, o usuário é levado à página de detalhamento.  
 
@@ -121,6 +121,6 @@ Sinta-se à vontade para sugerir melhorias ou reportar bugs abrindo **issues** o
 
 ## **👤 Autor**  
 
-**Mozar Lima**  
-📧 Email: mozarfrancisco@gmail.com
-🔗 GitHub: https://github.com/mozar86
+**Mozar Francisco**  
+📧 Email: [mozarfrancisco@gmail.com](mailto:mozarfrancisco@gmail.com)  
+🔗 GitHub: [https://github.com/mozar86](https://github.com/mozar86)
